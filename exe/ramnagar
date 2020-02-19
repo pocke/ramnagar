@@ -1,0 +1,5 @@
+#!ruby
+
+require 'ramnagar'
+
+Ramnagar::CLI.new(ARGV).run
