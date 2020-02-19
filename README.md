@@ -1,8 +1,6 @@
 # Ramnagar
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ramnagar`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A converter from search query to GitHub's Notification query.
 
 ## Installation
 
@@ -22,7 +20,14 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+It supports only `user:USER_NAME` query. It converts `user:USER_NAME` to `repo:REPO1 repo:REPO2 ...`.
+
+```bash
+$ GITHUB_ACCESS_TOKEN=XXXXX ramnagar user:rubocop-hq
+repo:rubocop-hq/rubocop-rubycw repo:rubocop-hq/rubocop-rake repo:rubocop-hq/rubocop-extension-generator ....
+```
+
+Note that it slices query if the query is over than 1024 characters because of GitHub's limitation.
 
 ## Development
 
